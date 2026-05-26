@@ -1,3 +1,15 @@
+// --- 以下是為了騙過 Render 的防睡覺 Code ---
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.write('Bot is alive!');
+  res.end();
+});
+server.listen(process.env.PORT || 10000, () => {
+  console.log('Render Port 監聽中...');
+});
+// --- 以上是為了騙過 Render 的防睡覺 Code ---
+
 require("dotenv").config();
 
 const { Client, GatewayIntentBits, MessageFlags } = require("discord.js");
